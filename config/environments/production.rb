@@ -79,7 +79,7 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
 
-    logger           = ActiveSupport::Logger.new($stdout)
-    logger.formatter = config.log_formatter
+  logger           = ActiveSupport::Logger.new($stdout)
+  logger.formatter = config.log_formatter
   config.active_record.dump_schema_after_migration = false
 end
