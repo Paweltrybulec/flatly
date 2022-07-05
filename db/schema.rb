@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_02_210107) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_02_222055) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -76,8 +76,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_02_210107) do
     t.bigint "flat_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
     t.index ["flat_id"], name: "index_offers_on_flat_id"
     t.index ["price_id"], name: "index_offers_on_price_id"
+    t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
   create_table "prices", force: :cascade do |t|
@@ -106,4 +108,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_02_210107) do
   add_foreign_key "flats", "users"
   add_foreign_key "offers", "flats"
   add_foreign_key "offers", "prices"
+  add_foreign_key "offers", "users"
 end

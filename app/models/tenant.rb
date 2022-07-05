@@ -3,5 +3,5 @@
 class Tenant < User
   devise :registerable, :recoverable, :rememberable
 
-  has_many :flats
+  has_many :offers, foreign_key: 'user_id'
 end

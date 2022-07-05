@@ -72,3 +72,4 @@ group :development do
   # gem "spring"
 end
 gem "sassc-rails"
+gem 'simple_form'

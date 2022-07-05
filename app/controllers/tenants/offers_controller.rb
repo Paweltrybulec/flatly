@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module Tenant
-  class OfferController < TenantController
+module Tenants
+  class OffersController < TenantController
     def new
       @offer = current_tenant.offers.build
     end

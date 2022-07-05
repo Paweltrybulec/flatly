@@ -2,12 +2,13 @@
 
 class Offer < ApplicationRecord
   OFFER_STATUSES = {
-    active: 'active',
+    published: 'published',
     draft: 'draft',
     archived: 'archived'
   }.freeze
 
   enum status: OFFER_STATUSES
+  belongs_to :tenant, class_name: "Tenant"
   belongs_to :price
   belongs_to :flat
 
