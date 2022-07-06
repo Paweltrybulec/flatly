@@ -1,0 +1,26 @@
+
+<%= simple_form_for @offer, url: new_tenants_offer_path do |f| %>
+  <%= f.input :name %>
+  <%= f.input :expire_at %>
+  <%= f.input :status, as: :hidden, input_html: { value: "draft" } %>
+  <%= simple_fields_for :flat do |ff| %>
+    <%= ff.input :square_footage %>
+    <%= ff.input :description %>
+    <%= simple_fields_for :address do |a| %>
+      <%= a.input :street %>
+      <%= a.input :building_number %>
+      <%= a.input :flat_number %>
+      <%= a.input :post_code %>
+      <%= a.input :city %>
+      <%= a.input :country %>
+      <%= a.input :description %>
+      <%= a.input :floor %>
+
+    <% end %>
+  <% end %>
+  <%= simple_fields_for :price do |p| %>
+    <%= p.input :rent_price %>
+    <%= p.input :lent_price %>
+    <%= p.input :media_price %>
+  <% end %>
+<% end %>
